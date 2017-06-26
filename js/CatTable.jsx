@@ -1,10 +1,34 @@
 import React from 'react';
+import CatRow from "./CategoryRow.jsx";
 
 
 
 
 class CatTable extends React.Component {
  render(){
+   console.log(this.props.kitties);
+  const male= this.props.kitties.filter(cat => {
+      return cat.category === 'male';
+  });
+  const female=this.props.kitties.filter(cat => {
+    return cat.category === "female";
+
+  });
+
+  const elam = male.map(cat => {
+    return(<tr key={cat.name}>
+                  <td>{cat.name}</td>
+                  <td>{cat.age}</td>
+              </tr>);
+  });
+
+  const elamef =female.map(cat => {
+    return(<tr key={cat.name}>
+                  <td>{cat.name}</td>
+                  <td>{cat.age}</td>
+              </tr>);
+
+});
    return(
 
 
@@ -13,32 +37,20 @@ class CatTable extends React.Component {
                      <tr>
                          <th>Name</th>
                           <th>Age</th>
-                      </tr>
+                            </tr>
+                        <br />
+                          <CatRow category="male" />
+                          {elam}
+
+                          <CatRow category="female" />
+                          {elamef} 
+
                   </thead>
-                  <tbody>
-                      <tr>
-                          <th colSpan="2">male</th>
-                      </tr>
-                      <tr>
-                          <td>Fidel</td>
-                          <td>4</td>
-                      </tr>
-                     <tr>
-                          <td>Fidel</td>
-                       <td>4</td>
-                     </tr>
-                      <tr>
-                          <th colSpan="2">female</th>
-                      </tr>
-                      <tr>
-                          <td>Yude</td>
-                          <td>4</td>
-                     </tr>
-                  </tbody>
+
             </table>
 
 
-     ); 
+     );
  }
 
 
