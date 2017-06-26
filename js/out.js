@@ -9800,19 +9800,21 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.handleText = function (event) {
-      _this.setState({ name: event.target.value });
-    };
-
     _this.handleButton = function () {
       var array = [];
       _this.state.kitties.map(function (e) {
-        if (e.likesKids === true) {
+        if (e.likesKids == true) {
           array.push(e);
         }
       });
       _this.setState({
         kitties: array
+      });
+    };
+
+    _this.handleText = function (e) {
+      _this.setState({
+        name: e.target.value
       });
     };
 
@@ -9827,6 +9829,14 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      this.state.kitties.filter(function (cat) {
+        if (_this2.state.name.length > 0 && cat.name === _this2.state.name) {
+          console.log("mamy kota w bazie danych");
+        }
+      });
+
       return _react2.default.createElement(
         "div",
         null,
@@ -10144,7 +10154,7 @@ var SearchBar = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement("input", { onChange: this.props.text, value: this.props.name }),
+        _react2.default.createElement("input", { type: "text", onChange: this.props.text, value: this.props.name }),
         _react2.default.createElement("br", null),
         _react2.default.createElement(
           "button",

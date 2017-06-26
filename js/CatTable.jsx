@@ -4,7 +4,7 @@ import CatHead from "./CatRow.jsx";
 
 class CatTable extends React.Component {
   render() {
-
+  
     const male = this.props.kitties.filter(cat => {
       return cat.category === 'male';
     });
@@ -15,7 +15,7 @@ class CatTable extends React.Component {
 
     const elam = male.map(cat => {
       return (
-        <tr key={cat.name}> 
+        <tr key={cat.name}>
           <td>{cat.name}</td>
           <td>{cat.age}</td>
         </tr>

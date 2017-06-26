@@ -29,30 +29,46 @@ class App extends React.Component {
 
 }
 
- handleText = (event) => {
-   this.setState({name:	event.target.value});
-   
+
+handleButton = () => {
+  const array=[];
+  this.state.kitties.map(e =>{
+    if(e.likesKids == true){
+      array.push(e);
+    }
+  });
+  this.setState({
+    kitties : array
+  })
 
 }
 
-handleButton = ()=> {
-  const array = [];
-  this.state.kitties.map(e => {
-    if(e.likesKids === true){
-       array.push(e);
-
-     }
-});
+ handleText = (e) => {
    this.setState({
-     kitties:array
-   });
-}
+     name: e.target.value
+});
+
+   }
+
+
+
+
 
   render(){
-   return(
+
+
+        this.state.kitties.filter(cat => {
+         if(this.state.name.length > 0 && cat.name===this.state.name) {
+             console.log("mamy kota w bazie danych");
+
+            }
+        });
+
+
+   return( 
      <div>
        <SearchBar text={this.handleText} click={this.handleButton} name={this.state.name}  />
-       <CatTable kitties={this.state.kitties} />
+       <CatTable kitties={this.state.kitties}  />
 
      </div>
    );
