@@ -1,18 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-document.addEventListener('DOMContentLoaded', function(){
-
- ReactDOM.render(<h1>Hello</h1>,document.querySelector("#app"));
+import SearchBar from "./SearchBar.jsx";
+import CatTable from "./CatTable.jsx";
 
 
 
 
 
+ class App extends React.Component {
+  render(){
+   return(
+     <div>
+       <SearchBar />
+       <CatTable />
+     </div>
+   );
 
 
 
+  }
 
 
 
-}); 
+ }
+
+ export default App;

@@ -1,6 +1,6 @@
 //Konfiguracja Webpack
 module.exports = {
-    entry: "./js/App.jsx",
+    entry: "./Index.jsx",
     output: { filename: "./js/out.js" },
     watch: true,
     module: {
@@ -13,3 +13,4 @@ module.exports = {
         ]
     }
 }
+ 
