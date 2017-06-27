@@ -65,10 +65,10 @@ handleButton = () => {
         });
 
 
-   return( 
-     <div>
-       <SearchBar text={this.handleText} click={this.handleButton} name={this.state.name}  />
-       <CatTable kitties={this.state.kitties}  />
+   return(
+     <div className ="yellow maxWide">
+       <SearchBar  text={this.handleText} click={this.handleButton} name={this.state.name}  />
+       <CatTable  kitties={this.state.kitties}  />
 
      </div>
    );

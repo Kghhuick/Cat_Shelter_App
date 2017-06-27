@@ -4,11 +4,12 @@ import React from "react";
 class CatHead extends React.Component {
  render(){
    return(
-     <tr>
+        <div>
+         <tr>
             <td>{this.props.name}</td>
              <td>{this.props.age}</td>
-        </tr>
-
+         </tr>
+       </div>
 
    )
  }

@@ -9839,7 +9839,7 @@ var App = function (_React$Component) {
 
       return _react2.default.createElement(
         "div",
-        null,
+        { className: "yellow maxWide" },
         _react2.default.createElement(_SearchBar2.default, { text: this.handleText, click: this.handleButton, name: this.state.name }),
         _react2.default.createElement(_CatTable2.default, { kitties: this.state.kitties })
       );
@@ -9925,17 +9925,21 @@ var CatHead = function (_React$Component) {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
-        "tr",
+        "div",
         null,
         _react2.default.createElement(
-          "td",
+          "tr",
           null,
-          this.props.name
-        ),
-        _react2.default.createElement(
-          "td",
-          null,
-          this.props.age
+          _react2.default.createElement(
+            "td",
+            null,
+            this.props.name
+          ),
+          _react2.default.createElement(
+            "td",
+            null,
+            this.props.age
+          )
         )
       );
     }
@@ -10004,14 +10008,18 @@ var CatTable = function (_React$Component) {
           "tr",
           { key: cat.name },
           _react2.default.createElement(
-            "td",
-            null,
-            cat.name
-          ),
-          _react2.default.createElement(
-            "td",
-            null,
-            cat.age
+            "div",
+            { className: "width turquoise" },
+            _react2.default.createElement(
+              "td",
+              null,
+              cat.name
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              cat.age
+            )
           )
         );
       });
@@ -10021,31 +10029,45 @@ var CatTable = function (_React$Component) {
           "tr",
           { key: cat.name },
           _react2.default.createElement(
-            "td",
-            null,
-            cat.name
-          ),
-          _react2.default.createElement(
-            "td",
-            null,
-            cat.age
+            "div",
+            { className: "width turquoise" },
+            _react2.default.createElement(
+              "td",
+              null,
+              cat.name
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              cat.age
+            )
           )
         );
       });
       return _react2.default.createElement(
-        "table",
-        null,
+        "div",
+        { className: " blue wide" },
         _react2.default.createElement(
-          "thead",
+          "table",
           null,
-          _react2.default.createElement(_CatRow2.default, { name: "NAME", age: "AGE" }),
-          _react2.default.createElement("br", null),
-          _react2.default.createElement(_CategoryRow2.default, { category: "male" }),
-          " ",
-          elam,
-          _react2.default.createElement(_CategoryRow2.default, { category: "female" }),
-          " ",
-          elamef
+          _react2.default.createElement(
+            "thead",
+            null,
+            _react2.default.createElement(_CatRow2.default, { name: "NAME", age: "AGE" }),
+            _react2.default.createElement(
+              "h3",
+              { className: "green wide" },
+              _react2.default.createElement(_CategoryRow2.default, { category: "male" }),
+              " "
+            ),
+            elam,
+            _react2.default.createElement(
+              "h3",
+              { className: "green wide" },
+              _react2.default.createElement(_CategoryRow2.default, { category: "female" })
+            ),
+            elamef
+          )
         )
       );
     }
@@ -10153,7 +10175,7 @@ var SearchBar = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        null,
+        { className: "red wide" },
         _react2.default.createElement("input", { type: "text", onChange: this.props.text, value: this.props.name }),
         _react2.default.createElement("br", null),
         _react2.default.createElement(

@@ -12,3 +12,20 @@ turquoise:#40e0d0
     border: 2px solid $color;
   }
 }
+
+.wide {
+  width: 250px;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.maxWide {
+  width:260px;
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+.minWide{
+  width:100%; 
+
+}
